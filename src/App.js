@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import SingleCard from './components/SingleCard';
 import './App.css';
 
@@ -28,6 +28,14 @@ function App() {
 
   const handleChoice = (card) => {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  };
+
+  useEffect(() => {}, []);
+
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns((prevTurns) => prevTurns + 1);
   };
 
   return (
