@@ -30,7 +30,16 @@ function App() {
     choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.src === choiceTwo.src) {
+        console.log('Cards match');
+        resetTurn();
+      } else {
+        console.log('Those choices do not match');
+      }
+    }
+  }, [choiceOne, choiceTwo]);
 
   const resetTurn = () => {
     setChoiceOne(null);
