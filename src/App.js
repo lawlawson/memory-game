@@ -3,12 +3,12 @@ import SingleCard from './components/SingleCard';
 import './App.css';
 
 const cardImages = [
-  { src: '/img/helmet-1.png' },
-  { src: '/img/potion-1.png' },
-  { src: '/img/ring-1.png' },
-  { src: '/img/scroll-1.png' },
-  { src: '/img/shield-1.png' },
-  { src: '/img/sword-1.png' },
+  { src: '/img/helmet-1.png', matched: false },
+  { src: '/img/potion-1.png', matched: false},
+  { src: '/img/ring-1.png', matched: false },
+  { src: '/img/scroll-1.png', matched: false },
+  { src: '/img/shield-1.png', matched: false},
+  { src: '/img/sword-1.png', matched: false },
 ];
 
 function App() {
@@ -33,10 +33,10 @@ function App() {
   useEffect(() => {
     if (choiceOne && choiceTwo) {
       if (choiceOne.src === choiceTwo.src) {
-        console.log('Cards match');
+
         resetTurn();
       } else {
-        console.log('Those choices do not match');
+
       }
     }
   }, [choiceOne, choiceTwo]);
